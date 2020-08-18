@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import SearchMovies from './searchMovies';
 
-ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
-	document.getElementById('root')
-);
+class Main extends React.Component {
+	render() {
+		return (
+			<div className='container'>
+				<h1 className='title'>React Movie Search</h1>
+				<SearchMovies />
+			</div>
+		);
+	}
+}
+
+ReactDOM.render(<Main />, document.getElementById('root'));
