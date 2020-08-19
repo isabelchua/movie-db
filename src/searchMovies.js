@@ -32,6 +32,7 @@ export default function SearchMovies() {
 					name='query'
 					placeholder='e.g. The Lion King '
 					query={query}
+					required='required'
 					onChange={e => setQuery(e.target.value)}
 				/>
 				<button className='button' type='submit'>
