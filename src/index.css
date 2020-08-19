@@ -17,7 +17,7 @@ p {
 .container {
 	margin: 0 auto;
 	max-width: 1000px;
-	padding: 40px;
+	padding: 20px 40px;
 	display: flex;
 
 	flex-direction: column;
@@ -105,6 +105,8 @@ h3 {
 .card-poster {
 	margin: 0 auto;
 	display: block;
+	object-fit: cover;
+	height: 300px;
 }
 
 @media (min-width: 800px) {
