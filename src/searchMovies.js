@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import MovieComponent from './movieComponent';
+import React, { useState } from "react";
+import MovieComponent from "./movieComponent";
 
 export default function SearchMovies() {
-	const [query, setQuery] = useState('');
+	const [query, setQuery] = useState("");
 	const [movies, setMovies] = useState([]);
 
 	const searchMovies = async e => {
@@ -13,33 +13,34 @@ export default function SearchMovies() {
 		try {
 			const res = await fetch(url);
 			const data = await res.json();
-			//console.log(data);
+			console.log(data);
 
 			//object inner array
 			//console.log(data.results);
 			setMovies(data.results);
+			console.log(setMovies);
 		} catch (error) {
 			console.log(error);
 		}
 	};
 
 	return (
-		<div className='wrapper'>
-			<form className='form' onSubmit={searchMovies}>
+		<div className="wrapper">
+			<form className="form" onSubmit={searchMovies}>
 				<input
-					className='input'
-					type='text'
-					name='query'
-					placeholder='e.g. The Lion King '
+					className="input"
+					type="text"
+					name="query"
+					placeholder="e.g. The Lion King "
 					query={query}
-					required='required'
+					required="required"
 					onChange={e => setQuery(e.target.value)}
 				/>
-				<button className='button' type='submit'>
+				<button className="button" type="submit">
 					Search
 				</button>
 			</form>
-			<div className='card-list'>
+			<div className="card-list">
 				{movies
 					.filter(movie => movie.poster_path)
 					.map(movie => (
